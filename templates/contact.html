@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block CSS %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+{% endblock CSS %}
+
+
+{% block contactForm %}
+<!-- Wrapper container -->
+<div class="content">
+
+  <!-- Bootstrap 5 starter form -->
+  <form action="https://formsubmit.co/705ec147ff164371505a3c0038af0e4d" method="POST">
+    <!-- Honeypot -->
+    <input type="text" name="_honey" style="display: none;">
+
+    <!-- Disable Captcha -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Name input -->
+    <div class="mb-3">
+      <label class="form-label" for="name">Nume</label>
+      <input class="form-control" id="name" name="first&nbsp;name" type="text" placeholder="Nume" data-sb-validations="required" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="name">Prenume</label>
+      <input class="form-control" id="name" name="last&nbsp;name" type="text" placeholder="Nume" data-sb-validations="required" />
+    </div>
+
+    <!-- Email address input -->
+    <div class="mb-3">
+      <label class="form-label" for="emailAddress">Email</label>
+      <input class="form-control" id="emailAddress" name="email" type="email" placeholder="Email" data-sb-validations="required, email" />
+    </div>
+
+    <!-- Message input -->
+    <div class="mb-3">
+      <label class="form-label" for="message">Mesaj</label>
+      <textarea class="form-control" id="message" name="comments" type="text" placeholder="Mesaj" style="height: 10rem;" data-sb-validations="required"></textarea>
+    </div>
+
+    <!-- Form submit button -->
+    <input class="btn btn-primary" type="submit" value="Trimiteti">
+
+  </form>
+
+</div>
+
+{% endblock contactForm %}
+

@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+
+{% block CSS %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+{% endblock CSS %}
+
+{% block intro %}
+  <iframe width="420" height="315" src="https://www.youtube.com/embed/J2CdM0Ijews" class="center"></iframe>
+{% endblock intro %}
+
+{% block content %}
+    {% for post in posts %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted }}</small>
+            </div>
+            <h2>{{ post.title }}</a></h2>
+            <div class="box-header clearfix">
+            	<div class="left-cell">
+            		<p><a class="fa fa-facebook" href="{{ post.link }}"></a></p>
+            	</div>
+            	<div class="right-cell">
+            		<p><a href="#" class="fa fa-youtube"></a></p>
+            	</div>
+        	</div>
+          </div>
+        </article>
+    {% endfor %}
+
+
+{% endblock content %}
